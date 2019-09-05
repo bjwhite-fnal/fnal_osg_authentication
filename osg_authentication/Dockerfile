@@ -26,3 +26,4 @@ RUN systemctl enable osg-update-certs-cron
 RUN yum install -y fetch-crl
 RUN systemctl enable fetch-crl-boot
 RUN systemctl enable fetch-crl-cron
+RUN yum clean all
