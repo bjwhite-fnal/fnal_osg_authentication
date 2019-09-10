@@ -16,4 +16,7 @@ RUN yum install -y osg-ca-certs && yum clean all
 ADD ./update_ca_certificates.cron /etc/cron.d/update_ca_certificates.cron
 RUN chmod 0644 /etc/cron.d/update_ca_certificates.cron && touch /var/log/osg_ca_cron
 
-CMD crond && tail -f /var/log/osg_ca_cron
+ADD ./docker_entrypoint.sh /docker_entrypoint.sh
+
+ENTRYPOINT ["/docker_entrypoint.sh"]
+#CMD ["tail", "-f", "/var/log/osg_ca_cron"]
