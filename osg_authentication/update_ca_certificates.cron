@@ -1,1 +1,1 @@
-* * * * * root echo "Updating $(date)" >> /var/log/osg_ca_cron && yum update osg-ca-certs >> /var/log/osg_ca_cron
+* 4,8,12,16,20 * * * root echo "Updating $(date)" >> /var/log/osg_ca_cron && yum update osg-ca-certs >> /var/log/osg_ca_cron
